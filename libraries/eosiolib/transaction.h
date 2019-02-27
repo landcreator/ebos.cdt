@@ -4,6 +4,9 @@
  */
 #pragma once
 #include <eosiolib/types.h>
+#include <eosiolib/eosio.hpp>
+
+using namespace eosio;
 
 extern "C" {
    /**
