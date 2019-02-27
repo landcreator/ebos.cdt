@@ -1,13 +1,12 @@
-FROM ubuntu:18.04
+FROM boscore/builder as builder
+ARG branch=master
 
-# Arguments that may be overridden by the user
-ARG release=latest
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssl ca-certificates curl wget git cmake python3 g++ && rm -rf /var/lib/apt/lists/*
 
-# Install required packages
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install openssl ca-certificates curl wget && rm -rf /var/lib/apt/lists/*
+RUN cd / && git clone --depth 1 -b $branch https://github.com/boscore/bos.cdt.git --recursive \
+    && cd /bos.cdt/ \
+    && ./build.sh \
+    && ./install.sh \
+    && cd .. \
+    && rm -rf ./bos.cdt
 
-# Install CDT from deb package
-ADD install_deb.sh /
-RUN /install_deb.sh $release && rm -f install_deb.sh
-
-USER root

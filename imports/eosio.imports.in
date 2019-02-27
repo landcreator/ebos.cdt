@@ -48,6 +48,8 @@ set_resource_limits
 set_proposed_producers
 get_blockchain_parameters_packed
 set_blockchain_parameters_packed
+set_name_list_packed
+set_guaranteed_minimum_resources
 is_privileged
 set_privileged
 get_active_producers
@@ -203,6 +205,11 @@ printn
 printhex
 read_transaction
 transaction_size
+get_transaction_id
+get_action_sequence
+has_contract
+get_contract_code
+bpsig_action_time_seed
 expiration
 tapos_block_prefix
 tapos_block_num

@@ -16,8 +16,8 @@ else()
 endif()
 
 
-set(VERSION_MAJOR 1)
-set(VERSION_MINOR 5)
+set(VERSION_MAJOR 2)
+set(VERSION_MINOR 4)
 set(VERSION_PATCH 0)
 #set(VERSION_SUFFIX )
 
@@ -71,11 +71,11 @@ configure_file(${CMAKE_SOURCE_DIR}/scripts/ricardeos/ricardeos.py ${CMAKE_BINARY
 install(FILES ${CMAKE_BINARY_DIR}/scripts/ricardeos.py DESTINATION ${CMAKE_INSTALL_PREFIX}/scripts)
 
 # section for package construction
-set(VENDOR "block.one")
+set(VENDOR "boscore.io")
 set(PROJECT_NAME "eosio.cdt")
 set(DESC "Toolchain and supporting tools for the EOS.IO platform")
-set(URL "https://github.com/eosio/eosio.cdt")
-set(EMAIL "support@block.one")
+set(URL "https://github.com/boscore/bos.cdt")
+set(EMAIL "support@boscore.io")
 configure_file(${CMAKE_SOURCE_DIR}/scripts/generate_package.sh.in ${CMAKE_BINARY_DIR}/packages/generate_package.sh @ONLY)
 configure_file(${CMAKE_SOURCE_DIR}/scripts/generate_deb.sh ${CMAKE_BINARY_DIR}/packages/generate_deb.sh COPYONLY)
 configure_file(${CMAKE_SOURCE_DIR}/scripts/generate_bottle.sh ${CMAKE_BINARY_DIR}/packages/generate_bottle.sh COPYONLY)

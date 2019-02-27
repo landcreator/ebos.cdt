@@ -85,6 +85,27 @@ extern "C" {
     * @post `data` is filled with packed blockchain parameters
     */
    uint32_t get_blockchain_parameters_packed( char* data, uint32_t datalen );
+   
+   /* bos */
+   /**
+    * @brief Set the name list packed object
+    * Set the name list packed object
+    * @param list     blacklist type enum type value include 1-actor_blacklist_type  2-contract_blacklist_type 3-resource_greylist_type
+    * @param action   list action type enum type value include 1- insert_type 2-remove_type
+    * @param data     vector<string> fc pack  data  char* type
+    * @param datalen  the length of the data.
+    */
+   void set_name_list_packed(int64_t list, int64_t action, char* data, uint32_t datalen);
+
+   /**
+    * @brief Set the guaranteed minimum resources object
+    * Set the guaranteed minimum resources object
+    * @param ram gift ram bytes
+    * @param cpu gift cpu microsecond
+    * @param net gift net bytes
+    */
+   void set_guaranteed_minimum_resources(int64_t ram, int64_t cpu, int64_t net);
+   /* bos end */
 
 #ifdef __cplusplus
 }
