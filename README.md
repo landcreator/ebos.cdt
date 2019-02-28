@@ -1,4 +1,5 @@
 # BOSCore.CDT (Contract Development Toolkit)
+
 ## BOSCore.CDT Version: v2.0.2
 ## Basic EOSIO.CDT Version: 1.5.0
 
