@@ -64,19 +64,18 @@
 
 	for (( i=0; i<${#DEP_ARRAY[@]}; i++ ));
 	do
-		pkg=$( sudo "$YUM" info "${DEP_ARRAY[$i+1]}" 2>/dev/null | grep Repo | tr -s ' ' | cut -d: -f2 | sed 's/ //g' )
-		which "${DEP_ARRAY[$i+1]}" > /dev/null
-		installed=$? 
-		if [ "$pkg" != "installed" ] && [ "$installed" -gt "1" ]; then
-			DEP=$DEP" ${DEP_ARRAY[$i+1]} "
-			DISPLAY="${DISPLAY}${COUNT}. ${DEP_ARRAY[$i+1]}\\n\\t"
-			printf "\\tPackage %s ${bldred} NOT ${txtrst} found.\\n" "${DEP_ARRAY[$i+1]}"
+		pkg=$( sudo "$YUM" info "${DEP_ARRAY[$i]}" 2>/dev/null | grep Repo | tr -s ' ' | cut -d: -f2 | sed 's/ //g' )
+
+		if [ "$pkg" != "installed" ]; then
+			DEP=$DEP" ${DEP_ARRAY[$i]} "
+			DISPLAY="${DISPLAY}${COUNT}. ${DEP_ARRAY[$i]}\\n\\t"
+			printf "\\tPackage %s ${bldred} NOT ${txtrst} found.\\n" "${DEP_ARRAY[$i]}"
 			(( COUNT++ ))
 		else
-			printf "\\tPackage %d %s found.\\n" $(( i+1 )) "${DEP_ARRAY[$i+1]}"
+			printf "\\tPackage %s found.\\n" "${DEP_ARRAY[$i]}"
 			continue
 		fi
-	done		
+	done	
 
 	if [ "${COUNT}" -gt 1 ]; then
 		printf "\\n\\tThe following dependencies are required to install EOSIO.\\n"
