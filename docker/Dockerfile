@@ -1,4 +1,4 @@
-FROM eosio/builder as builder
+FROM boscore/builder as builder
 ARG branch=master
 
 ENV OPENSSL_ROOT_DIR /usr/include/openssl
