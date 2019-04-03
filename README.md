@@ -1,7 +1,7 @@
 # BOSCore.CDT (Contract Development Toolkit)
 
 ## BOSCore.CDT Version: v2.0.2
-## Basic EOSIO.CDT Version: 1.5.0
+## Basic EOSIO.CDT Version: 1.6.1
 
 ## Use BOSCore CDT docker image to build smart conrtacts 
 
