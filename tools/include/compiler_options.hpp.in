@@ -111,6 +111,7 @@ static cl::opt<bool> allow_sse_opt(
     cl::desc("Should not be used, except for build libc"),
     cl::Hidden,
     cl::cat(LD_CAT));
+
 /// End of ld options
 
 #ifndef ONLY_LD
@@ -353,6 +354,7 @@ struct Options {
 static void GetCompDefaults(std::vector<std::string>& copts) {
    const char* eosio_apply_suff = "${CMAKE_SHARED_LIBRARY_SUFFIX}";
    std::string apply_lib;
+
    if (!fnative_opt) {
       copts.emplace_back("--target=wasm32");
       copts.emplace_back("-ffreestanding");
@@ -360,6 +362,7 @@ static void GetCompDefaults(std::vector<std::string>& copts) {
       copts.emplace_back("-fno-builtin");
    } else {
       copts.emplace_back("-Wunused-command-line-argument");
+
 #ifdef __APPLE__
       copts.emplace_back("--target=x86_64-unknown-darwin-macho");
       copts.emplace_back("-mmacosx-version-min=10.13");
@@ -383,6 +386,7 @@ static void GetCompDefaults(std::vector<std::string>& copts) {
       copts.emplace_back("-fno-rtti");
       copts.emplace_back("-fmodules-ts");
 #endif
+
       copts.emplace_back("-DBOOST_DISABLE_ASSERTS");
       copts.emplace_back("-DBOOST_EXCEPTION_DISABLE");
       if (!fnative_opt) {
@@ -543,6 +547,7 @@ static Options CreateOptions(bool add_defaults=true) {
    ldopts.emplace_back("-L"+eosio::cdt::whereami::where()+"/../lib64");
 #endif
 #endif
+
 #ifndef ONLY_LD
    if (!sysroot_opt.empty()) {
       copts.emplace_back("--sysroot="+sysroot_opt);
@@ -585,6 +590,7 @@ static Options CreateOptions(bool add_defaults=true) {
 #endif
       copts.emplace_back("-I"+eosio::cdt::whereami::where()+"/../include/eosiolib/core");
       copts.emplace_back("-I"+eosio::cdt::whereami::where()+"/../include/eosiolib/contracts");
+
 
 #ifndef __APPLE__
       ldopts.emplace_back("-L"+eosio::cdt::whereami::where()+"/../lib64");

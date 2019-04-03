@@ -18,3 +18,4 @@ add_native_executable( varint_tests varint_tests.cpp )
 
 target_compile_options( rope_tests PUBLIC -g )
 add_subdirectory(test_contracts)
+

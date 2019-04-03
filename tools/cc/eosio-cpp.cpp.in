@@ -172,7 +172,6 @@ void generate(const std::vector<std::string>& base_options, std::string input, s
 }
 
 int main(int argc, const char **argv) {
-
    // fix to show version info without having to have any other arguments
    for (int i=0; i < argc; i++) {
      if (argv[i] == std::string("-v")) {

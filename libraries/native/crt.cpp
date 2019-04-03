@@ -1,7 +1,9 @@
+
 #include <eosio/name.hpp>
 #include <eosio/action.hpp>
 #include "native/eosio/intrinsics.hpp"
 #include "native/eosio/crt.hpp"
+
 #include <cstdint>
 #include <functional>
 #include <stdio.h>
@@ -11,6 +13,7 @@ eosio::cdt::output_stream std_out;
 eosio::cdt::output_stream std_err;
 
 extern "C" {
+
    int main(int, char**);
    char* _mmap();
    
@@ -20,6 +23,7 @@ extern "C" {
    jmp_buf* ___env_ptr = &env;
    char* ___heap;
    char* ___heap_ptr;
+
    char* ___heap_base_ptr;
    size_t ___pages;
    void ___putc(char c);
@@ -40,6 +44,7 @@ extern "C" {
       ___heap_ptr += (size*64*1024);
       return ++___pages;
    }
+
 
    void _prints_l(const char* cstr, uint32_t len, uint8_t which) {
       for (int i=0; i < len; i++) {
@@ -130,7 +135,9 @@ extern "C" {
          });
       intrinsics::set_intrinsic<intrinsics::printqf>([](const long double* v) {
             int* tmp = (int*)v;
+
             printf("0x%04x%04x%04x%04x", tmp[0], tmp[1], tmp[2], tmp[3]);
+
          });
       intrinsics::set_intrinsic<intrinsics::printn>([](uint64_t nm) {
             std::string s = eosio::name(nm).to_string();
@@ -150,5 +157,6 @@ extern "C" {
    extern "C" void __bzero(void* to, size_t cnt) {
       char* cp{static_cast<char*>(to)};
       while (cnt--) *cp++ = 0;
+
    }
 }

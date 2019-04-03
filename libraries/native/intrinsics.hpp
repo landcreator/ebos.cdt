@@ -3,7 +3,9 @@
 
 #pragma once
 
+
 #warning "<eosio/native/intrinsics.hpp> is deprecated use <eosio/intrinsics.hpp>"
+
 namespace eosio { namespace native {
    
    class intrinsics {

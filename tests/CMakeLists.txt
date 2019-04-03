@@ -15,3 +15,4 @@ add_test( varint_tests ${CMAKE_BINARY_DIR}/tests/unit/varint_tests )
 if (eosio_FOUND AND EOSIO_RUN_INTEGRATION_TESTS)
    add_test(integration_tests ${CMAKE_BINARY_DIR}/tests/integration/integration_tests)
 endif()
+

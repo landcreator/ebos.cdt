@@ -1,5 +1,6 @@
 #pragma once
 
+
 #include <eosio/action.h>
 #include <eosio/chain.h>
 #include <eosio/crypto.h>
@@ -14,6 +15,7 @@
 #include <type_traits>
 
 #warning "<eosio/native/intrinsics_def.hpp> is deprecated use <eosio/intrinsics_def.hpp>"
+
 namespace eosio { namespace native {
    template <typename... Args, size_t... Is>
    auto get_args_full(std::index_sequence<Is...>) {
