@@ -1,70 +1,48 @@
-/**
- *  @file
- *  @copyright defined in eos/LICENSE
- */
-#pragma once
-
-#include <stdint.h>
-#include <wchar.h>
-
-#warning "<eosiolib/types.h> is deprecated use <eosio/types.h>. If you are using C++ the .h header files will be removed from inclusion entirely in v1.7.0"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-/**
- *  @addtogroup c_types
- *  @brief Specifies builtin types, typedefs and aliases
- *  @{
- */
-
-/**
- * Macro to align/overalign a type to ensure calls to intrinsics with pointers/references are properly aligned
- */
-
-/* macro to align/overalign a type to ensure calls to intrinsics with pointers/references are properly aligned */
-#define ALIGNED(X) __attribute__ ((aligned (16))) X
-
-typedef uint64_t capi_name;
-
-/**
- * EOSIO Public Key. It is 34 bytes.
- */
-struct capi_public_key {
-   char data[34];
-};
-
-/**
- * EOSIO Signature. It is 66 bytes.
- */
-struct capi_signature {
-   uint8_t data[66];
-};
-
-/**
- * 256-bit hash
- */
-struct ALIGNED(capi_checksum256) {
-   uint8_t hash[32];
-};
-
-/**
- * 160-bit hash
- */
-struct ALIGNED(capi_checksum160) {
-   uint8_t hash[20];
-};
-
-/**
- * 512-bit hash
- */
-struct ALIGNED(capi_checksum512) {
-   uint8_t hash[64];
-};
-
-/// @}
-
-#ifdef __cplusplus
-} /// extern "C"
-#endif
+__ashlti3
+__ashrti3
+__lshlti3
+__lshrti3
+__divti3
+__udivti3
+__modti3
+__umodti3
+__multi3
+__addtf3
+__subtf3
+__multf3
+__divtf3
+__eqtf2
+__netf2
+__getf2
+__gttf2
+__lttf2
+__letf2
+__cmptf2
+__unordtf2
+__negtf2
+__floatsitf
+__floatunsitf
+__floatditf
+__floatunditf
+__floattidf
+__floatuntidf
+__floatsidf
+__extendsftf2
+__extenddftf2
+__fixtfti
+__fixtfdi
+__fixtfsi
+__fixunstfti
+__fixunstfdi
+__fixunstfsi
+__fixsfti
+__fixdfti
+__fixunssfti
+__fixunsdfti
+__trunctfdf2
+__trunctfsf2
+memcpy
+memmove
+memcmp
+memset
+abort
