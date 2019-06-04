@@ -145,7 +145,6 @@ extern "C" {
       }
       return ret_val;
    }
-   
    extern "C" void* memset(void*, int, size_t);
    extern "C" void __bzero(void* to, size_t cnt) {
       char* cp{static_cast<char*>(to)};
