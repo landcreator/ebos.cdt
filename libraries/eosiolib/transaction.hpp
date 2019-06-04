@@ -37,6 +37,12 @@ namespace eosio {
    typedef std::tuple<uint16_t, std::vector<char>> extension;
    typedef std::vector<extension> extensions_type;
 
+
+   /**
+    * Class transaction_header contains details about the transaction
+    * @brief Contains details about the transaction
+    */
+
    /**
     * Class transaction_header contains details about the transaction
     * @brief Contains details about the transaction

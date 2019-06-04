@@ -31,6 +31,9 @@ extern "C" {
    void set_blockchain_parameters_packed( char* data, uint32_t datalen ) {
       return intrinsics::get().call<intrinsics::set_blockchain_parameters_packed>(data, datalen);
    }
+   void set_upgrade_parameters_packed( char* data, uint32_t datalen ) {
+      return intrinsics::get().call<intrinsics::set_upgrade_parameters_packed>(data, datalen);
+   }
    bool is_privileged( capi_name account ) {
       return intrinsics::get().call<intrinsics::is_privileged>(account);
    }
@@ -597,6 +600,7 @@ extern "C" {
       float64_t ret;
       int e = a.v >> 52 & 0x7FF;
       float64_t y;
+
       if ( a.v == 0x8000000000000000) {
          return af;
       }

@@ -5,6 +5,8 @@
 #pragma once
 #include "datastream.hpp"
 
+#include "system.hpp"
+
 #include <array>
 #include <algorithm>
 #include <functional>
@@ -347,7 +349,6 @@ namespace eosio {
    bool operator <=(const fixed_bytes<Size> &c1, const fixed_bytes<Size> &c2) {
       return c1._data <= c2._data;
    }
-
 
    using checksum160 = fixed_bytes<20>;
    using checksum256 = fixed_bytes<32>;
