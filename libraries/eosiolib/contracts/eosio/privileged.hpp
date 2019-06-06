@@ -159,6 +159,14 @@ namespace eosio {
       )
    };
 
+   struct upgrade_parameters {
+       uint32_t target_block_num;
+
+       EOSLIB_SERIALIZE(upgrade_parameters,
+                         (target_block_num)
+       )
+   };
+
    /**
     *  Set the blockchain parameters
     *
@@ -174,6 +182,22 @@ namespace eosio {
     *  @param params - It will be replaced with the retrieved blockchain params
     */
    void get_blockchain_parameters(eosio::blockchain_parameters& params);
+
+   /**
+    *  Set blolckchain upgrade parameters
+    *
+    *  @ingroup privileged
+    *  @param params - upgrade_parameters to set
+    */
+   void set_upgrade_parameters(const eosio::upgrade_parameters& params);
+
+   /**
+    *  Set blolckchain upgrade parameters packed
+    *
+    *  @ingroup privileged
+    *  @param params - data
+    */
+   void set_upgrade_parameters_packed( char* data, uint32_t datalen );
 
     /**
     *  Get the resource limits of an account
