@@ -149,6 +149,8 @@ namespace eosio {
     */
    void get_blockchain_parameters(eosio::blockchain_parameters& params);
 
+   void set_upgrade_parameters(const eosio::upgrade_parameters& params);
+
    ///@}
 
    /**
