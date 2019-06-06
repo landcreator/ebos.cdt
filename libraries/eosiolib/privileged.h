@@ -55,6 +55,7 @@ extern "C" {
     */
    void set_active_producers( char *producer_data, uint32_t producer_data_size );
 
+   /*
     * Check if an account is privileged
     *
     * @param account - name of the account to be checked
@@ -104,8 +105,10 @@ extern "C" {
     * @param data     vector<string> fc pack  data  char* type
     * @param datalen  the length of the data.
     */
+   __attribute__((eosio_wasm_import))
    void set_name_list_packed(int64_t list, int64_t action, char* data, uint32_t datalen);
 
+   __attribute__((eosio_wasm_import))
    void set_upgrade_parameters_packed( char* data, uint32_t datalen );
 
    /**
@@ -115,6 +118,7 @@ extern "C" {
     * @param cpu gift cpu microsecond
     * @param net gift net bytes
     */
+   __attribute__((eosio_wasm_import))
    void set_guaranteed_minimum_resources(int64_t ram, int64_t cpu, int64_t net);
    /* bos end */
 

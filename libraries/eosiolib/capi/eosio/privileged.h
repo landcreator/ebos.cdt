@@ -85,6 +85,15 @@ void set_blockchain_parameters_packed( char* data, uint32_t datalen );
 __attribute__((eosio_wasm_import))
 uint32_t get_blockchain_parameters_packed( char* data, uint32_t datalen );
 
+/**
+*  Set blolckchain upgrade parameters packed
+*
+*  @ingroup privileged
+*  @param params - data
+*/
+__attribute__((eosio_wasm_import))
+void set_upgrade_parameters_packed( char* data, uint32_t datalen );
+
 #ifdef __cplusplus
 }
 #endif
