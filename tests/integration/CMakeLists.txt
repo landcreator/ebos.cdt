@@ -1,4 +1,4 @@
-cmake_minimum_required( VERSION 3.5 )
+cmake_minimum_required( VERSION 3.4 )
 
 set(EOSIO_VERSION_MIN "1.4")
 set(EOSIO_VERSION_SOFT_MAX "1.4")

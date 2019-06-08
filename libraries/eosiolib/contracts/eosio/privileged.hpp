@@ -194,13 +194,7 @@ namespace eosio {
     */
    void set_upgrade_parameters(const eosio::upgrade_parameters& params);
 
-   /**
-    *  Set blolckchain upgrade parameters packed
-    *
-    *  @ingroup privileged
-    *  @param params - data
-    */
-   void set_upgrade_parameters_packed( char* data, uint32_t datalen );
+
 
     /**
     *  Get the resource limits of an account
