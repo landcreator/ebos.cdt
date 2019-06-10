@@ -3,12 +3,14 @@
 #include "serialize.hpp"
 #include "crypto.hpp"
 
+#warning "<eosiolib/privileged.hpp> is deprecated use <eosio/privileged.hpp>"
 namespace eosio {
 
   /**
-   * @addtogroup privileged Privileged C++ API
-   * @ingroup cpp_api
    * Defines C++ Privileged API
+   *
+   * @addtogroup privileged Privileged C++ API
+   * @ingroup contracts
    * @{
    */
 
@@ -131,14 +133,6 @@ namespace eosio {
                         (max_transaction_lifetime)(deferred_trx_expiration_window)(max_transaction_delay)
                         (max_inline_action_size)(max_inline_action_depth)(max_authority_depth)
       )
-   };
-
-   struct upgrade_parameters {
-       uint32_t target_block_num;
-
-       EOSLIB_SERIALIZE(upgrade_parameters,
-                         (target_block_num)
-       )
    };
 
    /**
