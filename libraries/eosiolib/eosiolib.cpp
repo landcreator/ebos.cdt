@@ -4,13 +4,13 @@
 
 namespace eosio {
    extern "C" {
-      __attribute__((eosio_wasm_import))
+     __attribute__((eosio_wasm_import))
       uint64_t current_time();
      __attribute__((eosio_wasm_import))
      void set_blockchain_parameters_packed(char*, uint32_t);
      __attribute__((eosio_wasm_import))
      uint32_t get_blockchain_parameters_packed(char*, uint32_t);
-         __attribute__((eosio_wasm_import))
+     __attribute__((eosio_wasm_import))
      void set_upgrade_parameters_packed(char*, uint32_t);
      __attribute__((eosio_wasm_import))
      int64_t set_proposed_producers( char *producer_data, uint32_t producer_data_size );
