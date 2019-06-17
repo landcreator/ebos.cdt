@@ -135,6 +135,14 @@ namespace eosio {
       )
    };
 
+   struct upgrade_parameters {
+       uint32_t target_block_num;
+
+       EOSLIB_SERIALIZE(upgrade_parameters,
+                         (target_block_num)
+       )
+   };
+
    /**
     * @brief Set the blockchain parameters
     * Set the blockchain parameters
